@@ -49,6 +49,7 @@ You can generate a secure key with this command:
 -   `src/app/(admin|profile)/page.tsx`: Examples of protected pages.
 -   `db.json`: A simple file-based database for users.
 
+```
 ┌──────────────────────────────────┐
 │   Browser (Client Components)    │
 └───────────────┬──────────────────┘
@@ -80,4 +81,5 @@ You can generate a secure key with this command:
 │   Browser (Client Components)    │
 └──────────────────────────────────┘
 
+```
                              
