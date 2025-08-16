@@ -82,4 +82,30 @@ You can generate a secure key with this command:
 └──────────────────────────────────┘
 
 ```
+
+```
+                               ┌─────────────────┐
+                               │    Database     │
+                               │   (User Data)   │
+                               └───────┬─────────┘
+                                       │ 2. Authenticate
+                                       │
+┌─────────────────┐            ┌───────┴─────────┐
+│ Browser/Client  │ 1. Request │  Server Actions │
+│ (Login, Nav)    ├───────────>│ (login/getSession)│
+└───────┬─────────┘<───────────┤                 │
+        │           4. Render  └───────┬─────────┘
+        │           Page/Redirect      │ 3. Create/Update Session
+        │                              │
+        │                      ┌───────▼─────────┐
+        │                      │  iron-session   │
+        │ 5. Store/Send        │(Encrypt/Decrypt)│
+        │   Cookie             └───────┬─────────┘
+        │                              │
+┌───────▼─────────┐            ┌───────▼─────────┐
+│ HTTPOnly Cookie │<───────────┤   Set Cookie    │
+│ (In Browser)    │  6. Header │   Response      │
+└─────────────────┘            └─────────────────┘
+```
+
                              
